@@ -1,6 +1,6 @@
 function solve(numbers) {
     let digits = numbers.toString().split('');
-    let sum = numbers.reduce((x, y) => x + y, 0);
+    let sum = digits.map(x => Number(x)).reduce((x, y) => x + y, 0);
     let areSame = digits.every(x => x === digits[0], 0);
 
     console.log(areSame);
