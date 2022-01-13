@@ -6,7 +6,7 @@ function solve(inputArr = []) {
         resultArr.push({
             name: name,
             level: Number(level),
-            items: items.length > 0 ? items.split(', ') : []
+            items: items ? items.split(', ') : []
         });
     }
 

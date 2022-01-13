@@ -14,8 +14,7 @@ function magic(matrix) {
         for (let j = 0; j < matrix.length; j++) {
             colSum += matrix[j][i];
         }
-
-        if (colSum !== neededSum) {
+        if (colSum !== neededSum){
             areMagical = false;
         }
         colSum = 0;
