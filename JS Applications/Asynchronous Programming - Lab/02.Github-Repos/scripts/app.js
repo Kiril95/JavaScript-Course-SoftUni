@@ -10,7 +10,7 @@ function loadRepos() {
 	    }
 	    
 	    return response.json(); // Returns another Promise(parsed) if the response is in JSON format
-	    })
+	 })
 	.then(data => {
 	     while (listSection.firstChild) {
 		    listSection.removeChild(listSection.firstChild); // Remove all list elements with this, instead of innerHTML!
@@ -26,8 +26,8 @@ function loadRepos() {
 		   liElement.append(anchorElement);
 		   listSection.append(liElement);
 	     }
-	     })
-	     .catch(error => {
-		    listSection.textContent = `${error.message}`;  // Catches the thrown error
-	     })
+	  })
+	  .catch(error => {
+		 listSection.textContent = `${error.message}`;  // Catches the thrown error
+	  })
 }
