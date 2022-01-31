@@ -13,21 +13,21 @@ function loadCommits() {
             return response.json();
         })
         .then(data => {
-            while(listSection.firstChild){
-				listSection.removeChild(listSection.firstChild);
-			}
+            while (listSection.firstChild) {
+                listSection.removeChild(listSection.firstChild);
+            }
 
             for (let commitInfo of data) {
-				let liElement = document.createElement('li');
+                let liElement = document.createElement('li');
 
-				liElement.textContent = `${commitInfo.commit.author.name}: ${commitInfo.commit.message}`;
+                liElement.textContent = `${commitInfo.commit.author.name}: ${commitInfo.commit.message}`;
 
-				listSection.append(liElement);
-			}
+                listSection.append(liElement);
+            }
         })
         .catch(error => {
             let liElement = document.createElement('li');
-			liElement.textContent = error.message;  
+            liElement.textContent = error.message;
             listSection.appendChild(liElement);
         })
 }

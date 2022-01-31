@@ -12,7 +12,7 @@ function loadRepos() {
 			return response.json(); // Returns another Promise(parsed) if the response is in JSON format
 		})
 		.then(data => {
-			while(listSection.firstChild){
+			while (listSection.firstChild) {
 				listSection.removeChild(listSection.firstChild); // Remove all list elements with this, instead of innerHTML!
 			}
 
