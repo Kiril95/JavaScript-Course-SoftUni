@@ -30,12 +30,12 @@ async function createRecipe(event) {
         const data = await response.json();
 
         if (!response.ok || response.status != 200) {
-            form.reset();  
-            throw new Error(data.message);
+            form.reset();  // Clear the form
+            throw new Error(data.message);  // The data has a special message
         }
 
         sessionStorage.setItem('authToken', data.accessToken);
-        window.location.pathname = '/base/index.html';
+        window.location.pathname = '/base/index.html'; // Return to the homepage
 
     } catch (error) {
         alert(error.message);
