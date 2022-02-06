@@ -1,8 +1,8 @@
 const form = document.querySelector('form');
 
-form.addEventListener('submit', createRecipe)
+form.addEventListener('submit', loginUser)
 
-async function createRecipe(event) {
+async function loginUser(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
