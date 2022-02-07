@@ -1,3 +1,2 @@
-# JS-AdvancedCourse-SoftUni
-Problem solutions for my SoftUni JavaScript Course.
-It includes: JS Advanced and JS Applications
+# JavaScript-Course-SoftUni
+It includes problem solutions for: JS Advanced and JS Applications.
