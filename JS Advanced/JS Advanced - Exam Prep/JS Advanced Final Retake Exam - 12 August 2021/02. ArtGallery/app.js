@@ -62,7 +62,6 @@ class ArtGallery {
 
         if (currentGuest.points < this.possibleArticles[currentArticle.articleModel]) {
             return 'You need to more points to purchase the article.';
-
         }
 
         currentGuest.points -= this.possibleArticles[currentArticle.articleModel];
