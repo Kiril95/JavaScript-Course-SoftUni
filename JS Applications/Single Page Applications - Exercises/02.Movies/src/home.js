@@ -9,7 +9,7 @@ const addBtn = document.querySelector('#add-movie-button');
 const movieSection = document.querySelector('#movie');
 
 export function showHomePage(){
-    // This function also updates the nav-bar and displays the movies, so we can use it everywhere
+    // This function updates the nav-bar and also displays the movies, so we can use it everywhere
     updateNavigation();
     main.replaceChildren();
 

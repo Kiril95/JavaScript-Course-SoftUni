@@ -1,4 +1,4 @@
-import { showHomePage } from './home.js';
+import { showDetails } from './details.js';
 
 export async function getLikes(targetId) {
     const response = await fetch(`http://localhost:3030/data/likes?where=movieId%3D%22${targetId}%22&distinct=_ownerId&count`, {
@@ -26,7 +26,7 @@ export async function haveYouLiked(targetId) {
     }
 }
 
-export async function likeMovie(targetId) {
+export async function likeMovie(event, targetId) {
     await fetch(`http://localhost:3030/data/likes`, {
         method: 'POST',
         headers: {
@@ -36,10 +36,10 @@ export async function likeMovie(targetId) {
         body: JSON.stringify({ movieId: targetId })
     })
 
-    showHomePage();
+    showDetails(event);
 }
 
-export async function removeLike(likedID) {
+export async function removeLike(event, likedID) {
     await fetch(`http://localhost:3030/data/likes/` + likedID, {
         method: 'DELETE',
         headers: {
@@ -48,5 +48,5 @@ export async function removeLike(likedID) {
         }
     })
 
-    showHomePage();
+    showDetails(event);
 }

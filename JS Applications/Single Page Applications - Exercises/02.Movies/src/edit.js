@@ -1,7 +1,11 @@
-import { showHomePage } from './home.js';
-import { showEditSection } from './details.js';
+import { showDetails } from './details.js';
+import { showSection } from './dom.js';
 
 const editSection = document.querySelector('#edit-movie');
+
+function showEditSection() {
+    showSection(editSection);
+}
 
 export async function handleForm(event) {
     // View the Edit section and put the targeted values in the fields to be ready for editing
@@ -45,10 +49,10 @@ async function editMovie(event) {
             throw new Error(data.message);
         }
 
-        showHomePage();
+        showDetails(event);
 
     } catch (error) {
-        showHomePage();
+        showDetails();
         alert(error.message);
     }
 }

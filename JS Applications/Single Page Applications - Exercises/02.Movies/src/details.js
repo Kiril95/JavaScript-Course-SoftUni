@@ -4,18 +4,12 @@ import { handleForm } from './edit.js';
 import { getLikes, haveYouLiked, likeMovie, removeLike } from './likes.js';
 
 const movieSection = document.querySelector('#movie');
+const main = document.querySelector('#views');
 
 const detailsSection = document.querySelector('#movie-example');
-const editSection = document.querySelector('#edit-movie');
-//detailsSection.remove();
-//editSection.remove();
 
 export function showDetailsSection() {
     showSection(detailsSection);
-}
-
-export function showEditSection() {
-    showSection(editSection);
 }
 
 export async function displayMovies() {
@@ -62,12 +56,12 @@ export async function displayMovies() {
     }
 }
 
-async function showDetails(event) {
+export async function showDetails(event) {
     event.preventDefault();
-    showDetailsSection();
-    detailsSection.replaceChildren();
+    detailsSection.replaceChildren(); // RESET
 
     let targetId = event.target.getAttribute('data-id');
+    let fragment = document.createDocumentFragment();
 
     try {
         const response = await fetch(`http://localhost:3030/data/movies/${targetId}`);
@@ -79,7 +73,8 @@ async function showDetails(event) {
             throw new Error(data.message);
         }
 
-        let containerDiv = createElement('div', undefined, 'container', detailsSection);
+        let containerDiv = createElement('div', undefined, 'container', fragment);
+
         let h1titleElement = createElement('h1', `${data.title}`, undefined, containerDiv);
 
         let div2 = createElement('div', undefined, 'row bg-light text-dark', containerDiv);
@@ -116,18 +111,20 @@ async function showDetails(event) {
                     likeAnchor.setAttribute('href', '#');
                     likeAnchor.style.backgroundColor = 'red';
                     
-                    likeAnchor.addEventListener('click', () => removeLike(hasUserLiked[0]._id)); // UNLIKE
+                    likeAnchor.addEventListener('click', () => removeLike(event, hasUserLiked[0]._id)); // UNLIKE
 
                 } else {
                     likeAnchor = createElement('a', 'Like', 'btn btn-primary', descriptionDiv);
                     likeAnchor.setAttribute('href', '#');
 
-                    likeAnchor.addEventListener('click', () => likeMovie(targetId)); // LIKE
+                    likeAnchor.addEventListener('click', () => likeMovie(event, targetId)); // LIKE
                 }
             }
         }
         let likesSpan = createElement('span', ` Likes ${likesCount}`, 'enrolled-span', descriptionDiv);
 
+        detailsSection.appendChild(fragment); // Append the fully formed Div
+        main.replaceChildren(detailsSection); // Update the page with new info
 
     } catch (error) {
         alert(error.message);
