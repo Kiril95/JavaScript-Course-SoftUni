@@ -1,0 +1,16 @@
+{
+  "name": "02.-christmasmovies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "02. Christmas Movies_Resources.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.0"
+  }
+}
