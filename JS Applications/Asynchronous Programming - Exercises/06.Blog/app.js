@@ -7,6 +7,8 @@ function attachEvents() {
     viewPostButton.addEventListener('click', generateInformation);
 
     async function createPosts() {
+        dropDownMenu.replaceChildren();
+
         try {
             const response = await fetch('http://localhost:3030/jsonstore/blog/posts');
     
