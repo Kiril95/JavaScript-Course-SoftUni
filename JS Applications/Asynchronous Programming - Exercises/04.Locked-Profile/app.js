@@ -44,6 +44,7 @@ async function lockedProfile() {
             inputEmail.value = `${info.email}`;
             inputEmail.disabled = true;
             inputEmail.readOnly = true;
+            hiddenDiv.style.display = 'none';
 
             let labelAge = createElement('label', undefined, undefined, undefined, hiddenDiv);
             labelAge.textContent = 'Age:';
@@ -68,7 +69,7 @@ async function lockedProfile() {
 
 function revealInformation(event) {
     let parentDiv = event.target.parentNode;
-    let hiddenDiv = parentDiv.querySelector('#user1HiddenFields');
+    let hiddenDiv = parentDiv.querySelector('#userHiddenFields');
     //let lock = parentDiv.querySelector(':nth-child(3)');
     let unlock = parentDiv.querySelector(':nth-child(5)');
     
