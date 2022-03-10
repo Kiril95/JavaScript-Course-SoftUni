@@ -1,11 +1,11 @@
 function attachEvents() {
     let submitBtn = document.querySelector('#submit');
 
-    window.addEventListener('load', loadBooks);
-    submitBtn.addEventListener('click', createBook);
+    window.addEventListener('load', loadStudents);
+    submitBtn.addEventListener('click', createStudent);
 }
 
-async function createBook(event) {
+async function createStudent(event) {
     event.preventDefault();
 
     let form = document.querySelector('#form')
@@ -43,13 +43,14 @@ async function createBook(event) {
         }
 
         form.reset();
+        loadStudents();
 
     } catch (error) {
         alert(error.message);
     }
 }
 
-async function loadBooks(event) {
+async function loadStudents(event) {
     event.preventDefault();
     const tableBody = document.querySelector('tbody');
 
