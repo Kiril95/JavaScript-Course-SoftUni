@@ -30,8 +30,8 @@ async function createSubscriber() {
         personField.value = '';
         phoneField.value = '';
 
-        location.reload(); // Reload page
-
+        loadBooks();
+        
     } catch (error) {
         alert(error.message);
     }
