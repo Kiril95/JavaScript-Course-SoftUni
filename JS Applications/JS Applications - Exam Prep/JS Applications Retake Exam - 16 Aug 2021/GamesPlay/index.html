@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src='/src/app.js' type="module"></script>
+    <title>GamesPlay</title>
+</head>
+
+<body>
+    <div id="box">
+        <header>
+            <!-- Navigation -->
+            <h1><a class="home" href="/">GamesPlay</a></h1>
+            <nav>
+                <a href="/all-games">All games</a>
+                <!-- Logged-in users -->
+                <div id="user">
+                    <a href="/create">Create Game</a>
+                    <a id="logoutBtn" href="javascript:void(0)">Logout</a>
+                </div>
+                <!-- Guest users -->
+                <div id="guest">
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main id="site-content">
+
+        </main>
+    </div>
+</body>
+
+</html>
