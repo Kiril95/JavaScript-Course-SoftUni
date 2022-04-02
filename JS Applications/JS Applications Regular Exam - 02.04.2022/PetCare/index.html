@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Care</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <script src='/src/app.js' type="module"></script>
+</head>
+
+<body>
+
+    <!--Navigation-->
+    <header>
+        <nav>
+            <section class="logo">
+                <img src="./images/logo.png" alt="logo">
+            </section>
+            <ul>
+                <!--Users and Guest-->
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <!--Only Guest-->
+                <li class="guest"><a href="/login">Login</a></li>
+                <li class="guest"><a href="/register">Register</a></li>
+                <!--Only Users-->
+                <li class="user"><a href="/create">Create Postcard</a></li>
+                <li class="user"><a id="logoutBtn" href="javascript:void(0)">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        
+    </main>
+
+    <footer>Pet Care 2022©</footer>
+</body>
+
+</html>
